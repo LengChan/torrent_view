@@ -1,0 +1,13 @@
+<h1>文件目录</h1>
+
+<ul>
+  <% @files.each do |file| %>
+    <% file_path = file.split("public/").last %>
+    <% file_name = file.split("/").last %>
+    <% if file_name.include?(".") %>
+     <a href=<%= "http://#{request.host_with_port}/#{file_path}" %> class="block"> <%= file_name %></a>
+    <% else %>
+      <a href=<%= "#{files_pages_url}?file_path=#{file_path}"%> class="block text-cyan-400"> .<%= file_name %></a>
+    <% end %>
+  <% end %>
+</ul>

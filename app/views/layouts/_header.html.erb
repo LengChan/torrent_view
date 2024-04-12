@@ -1,0 +1,40 @@
+<!-- Header -->
+<header class="bg-white shadow-md fixed w-full z-10 top-0">
+  <div class="container mx-auto px-4 py-2">
+    <nav class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/" class="font-bold text-xl text-blue-600">
+          My Blog
+        </a>
+      </div>
+
+      <!-- Navigation Menu -->
+      <div class="md:hidden">
+        <!-- Mobile menu button -->
+        <button class="text-gray-500 focus:outline-none" id="nav-toggle">
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16c1.5 0 2.5 1 2.5 2.5S19.5 11 18 11H4c-1.5 0-2.5-1-2.5-2.5S2.5 6 4 6zm9 12c1.5 0 2.5 1 2.5 2.5S19.5 23 18 23H4c-1.5 0-2.5-1-2.5-2.5S2.5 19 4 19zm0-6c1.5 0 2.5 1 2.5 2.5S19.5 23 18 23H4c-1.5 0-2.5-1-2.5-2.5S2.5 17 4 17z" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="nav-menu" class="hidden md:flex space-x-8">
+        <!-- Navigation Links -->
+        <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="/about" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="/contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+        <!-- Add more links here -->
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script type="text/javascript">
+  var button = document.getElementById("nav-toggle");
+  var menu = document.getElementById("nav-menu");
+  button.addEventListener("click", function() {
+    // Toggle the 'active' class on the menu
+    menu.classList.toggle("hidden");
+  });
+</script>
