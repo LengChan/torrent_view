@@ -11,5 +11,9 @@ Rails.application.routes.draw do
       get :files
       get :file_show
     end
-  end 
+  end
+
+  require 'sidekiq/web'
+
+  mount Sidekiq::Web => '/sidekiq' 
 end

@@ -5,9 +5,9 @@
     <% file_path = file.split("public/").last %>
     <% file_name = file.split("/").last %>
     <% if file_name.include?(".") %>
-     <a href=<%= "http://#{request.host_with_port}/#{file_path}" %> class="block"> <%= file_name %></a>
+     <a href=<%= "http://#{request.host_with_port}/#{file_path.gsub(" ", "%20")}" %> class="block"> <%= file_name %></a>
     <% else %>
-      <a href=<%= "#{files_pages_url}?file_path=#{file_path}"%> class="block text-cyan-400"> .<%= file_name %></a>
+      <a href=<%= "#{files_pages_url}?file_path=#{file_path.gsub(" ", "%20")}"%> class="block text-cyan-400"> .<%= file_name %></a>
     <% end %>
   <% end %>
 </ul>
