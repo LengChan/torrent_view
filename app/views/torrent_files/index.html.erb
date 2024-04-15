@@ -1,0 +1,14 @@
+<%= link_to "新建", new_torrent_file_path, class: "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" %>
+<h1 class="mt-2">文件目录</h1>
+
+<ul>
+  <% @files.each do |file| %>
+    <% file_path = file.split("public/").last %>
+    <% file_name = file.split("/").last %>
+    <% if file_name.include?(".") %>
+     <a href=<%= "http://#{request.host_with_port}/#{file_path.gsub(" ", "%20")}" %> class="block"> <%= file_name %></a>
+    <% else %>
+      <a href=<%= "#{torrent_files_url}?file_path=#{file_path.gsub(" ", "%20")}"%> class="block text-cyan-400"> .<%= file_name %></a>
+    <% end %>
+  <% end %>
+</ul>

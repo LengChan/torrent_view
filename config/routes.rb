@@ -13,6 +13,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :torrent_files, only: [:index, :new] do
+    collection do
+      post :download
+    end
+  end
+
   require 'sidekiq/web'
 
   mount Sidekiq::Web => '/sidekiq' 
