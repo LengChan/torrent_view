@@ -20,7 +20,6 @@ module TorrentView
     # config.eager_load_paths << Rails.root.join("extras")
     config.time_zone = 'Beijing'
     config.active_record.default_timezone = :local
-    config.i18n.default_locale = "zh-CN"
 
     config.active_job.queue_adapter = :sidekiq
   end
