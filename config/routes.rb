@@ -16,8 +16,11 @@ Rails.application.routes.draw do
   resources :torrent_files, only: [:index, :new] do
     collection do
       post :download
+      get :show_file
     end
   end
+  # get 'torrent_files/', to: 'torrent_files#show', as: 'video'
+
 
   require 'sidekiq/web'
 

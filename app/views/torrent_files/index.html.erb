@@ -6,7 +6,8 @@
     <% file_path = file.split("public/").last %>
     <% file_name = file.split("/").last %>
     <% if file_name.include?(".") %>
-     <a href=<%= "http://#{request.host_with_port}/#{file_path.gsub(" ", "%20")}" %> class="block"> <%= file_name %></a>
+
+     <%= link_to file_name, show_file_torrent_files_path(file_path: file_path) %>
     <% else %>
       <a href=<%= "#{torrent_files_url}?file_path=#{file_path.gsub(" ", "%20")}"%> class="block text-cyan-400"> .<%= file_name %></a>
     <% end %>
